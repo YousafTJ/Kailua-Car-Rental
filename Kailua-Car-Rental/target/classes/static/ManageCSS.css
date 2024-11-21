@@ -1,0 +1,432 @@
+.manage-page{
+    display: flex; justify-content: center;
+}
+
+.manage-h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.manage-box {
+    display: flex;
+    flex-direction: column; /* Stack the <a> tags vertically */
+    justify-content: space-evenly; /* Distribute <a> tags evenly within the box */
+    align-items: center; /* Center the <a> tags horizontally */
+    text-align: center; /* Center the text inside the <a> tags */
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 400px;
+    height: 500px;
+    margin-top: 100px;
+    /* Optional: Set a background color */
+}
+
+.manage-box a {
+    font-family: 'Montserrat', sans-serif;
+    width: 200px;
+    height: 70px;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    display: flex; /* Enable flexbox for centering content inside the <a> */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    text-decoration: none;
+    color: black; /* Default text color */
+    font-size: 16px; /* Set font size */
+}
+
+.manage-box a:hover {
+    background-color: greenyellow; /* Change background on hover */
+    color: white; /* Change text color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+
+/* ------------------------------ customer management --------------------------------------- */
+
+.customer-h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.customer-table{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    border-collapse: separate; /* Ensure border-spacing takes effect */
+    border-spacing: 10px 15px;
+}
+
+.customer-table th{
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+}
+
+.customer-table td{
+    font-family: 'Montserrat', sans-serif;
+    margin: 15px;
+}
+
+.delete-customer-button{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.delete-customer-button:hover{
+    transform: scale(1.1); /* Slightly increase size on hover */
+    background-color: darkred;
+}
+
+
+
+/* ------------------------------ contract management --------------------------------------- */
+
+
+.contract-h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.contract-table{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    border-collapse: separate; /* Ensure border-spacing takes effect */
+    border-spacing: 10px 15px;
+}
+
+.contract-table th{
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+}
+
+.contract-table td{
+    font-family: 'Montserrat', sans-serif;
+    margin: 15px;
+}
+
+.delete-contract-button{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.delete-contract-button:hover{
+    transform: scale(1.1); /* Slightly increase size on hover */
+    background-color: darkred;
+}
+
+
+
+
+/* ------------------------------ car types management --------------------------------------- */
+
+
+.car-type-h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+.car-type-table{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    border-collapse: separate; /* Ensure border-spacing takes effect */
+    border-spacing: 10px 15px;
+}
+
+
+.car-type-table th{
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+}
+
+.car-type-table td{
+    font-family: 'Montserrat', sans-serif;
+    margin: 15px;
+}
+
+
+
+.delete-car-type-button{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.delete-car-type-button:hover{
+    transform: scale(1.1); /* Slightly increase size on hover */
+    background-color: darkred;
+}
+
+.create-car-type-button{
+    display: inline-block; /* Make it behave like a block button */
+    padding: 15px 30px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #2fff00;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.create-car-type-button:hover{
+    transform: scale(1.1); /* Slightly increase size on hover */
+    background-color: #006400d5;
+}
+
+
+/* ------------------------------ car types create --------------------------------------- */
+
+
+/* Center the page content */
+body.create-car-type-page {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9; /* Light background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Form container */
+.car-type-create-box {
+    background-color: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
+    width: 400px; /* Fixed width for the form */
+}
+
+/* Form styling */
+.car-type-create-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between input fields */
+}
+
+/* Input boxes styling */
+.car-type-create-box input[type="text"],
+.car-type-create-box textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%; /* Full width of the form */
+}
+
+/* Make the textarea adjustable */
+.car-type-create-box textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 80px; /* Minimum height */
+    max-height: 200px; /* Maximum height */
+}
+
+/* Submit button styling */
+.submit-car-type {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50; /* Green color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the button */
+.submit-car-type:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Header styling */
+.create-car-type-h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333; /* Dark gray color */
+    margin-bottom: 20px;
+}
+
+
+
+
+/* ------------------------------ cars management --------------------------------------- */
+
+.manage-car-h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+.cars-table{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    border-collapse: separate; /* Ensure border-spacing takes effect */
+    border-spacing: 10px 15px;
+}
+
+
+.cars-table th{
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+}
+
+.cars-table td{
+    font-family: 'Montserrat', sans-serif;
+    margin: 15px;
+}
+
+
+
+.delete-car-button{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.delete-car-button:hover{
+    transform: scale(1.1); /* Slightly increase size on hover */
+    background-color: darkred;
+}
+
+.add-car{
+    display: inline-block; /* Make it behave like a block button */
+    padding: 15px 30px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #2fff00;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.add-car:hover{
+    transform: scale(1.1); /* Slightly increase size on hover */
+    background-color: #006400d5;
+}
+
+/* ------------------------------ cars create --------------------------------------- */
+
+body.add-car-page{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9; /* Light background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Form container */
+.add-car-box {
+    background-color: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
+    width: 400px; /* Fixed width for the form */
+}
+
+/* Form styling */
+.add-car-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between input fields */
+}
+
+/* Input boxes styling */
+.add-car-box input[type="text"],
+.add-car-box textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%; /* Full width of the form */
+}
+
+/* Make the textarea adjustable */
+.add-car-box textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 80px; /* Minimum height */
+    max-height: 200px; /* Maximum height */
+}
+
+/* Submit button styling */
+.submit-car-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50; /* Green color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the button */
+.submit-car-button:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Header styling */
+.add-car-h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333; /* Dark gray color */
+    margin-bottom: 20px;
+}

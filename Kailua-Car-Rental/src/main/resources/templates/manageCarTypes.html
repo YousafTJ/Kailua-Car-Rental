@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ManageCSS.css">
+    <title>Car types</title>
+</head>
+<body class="car-type-page">
+<h1 class="car-type-h1">All car types</h1>
+<a th:href="@{/createCarType}" class="create-car-type-button">Create new car type</a>
+<table class="car-type-table">
+    <thead>
+    <tr>
+        <th>Car id</th>
+        <th>Gear</th>
+        <th>Cruise control</th>
+        <th>Seats</th>
+        <th>Air condition</th>
+        <th>Car description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="carType: ${carTypes}">
+
+        <td th:text="${carType.car_id}"></td>
+        <td th:text="${carType.gear}"></td>
+        <td th:text="${carType.cruise_control}"></td>
+        <td th:text="${carType.seats}"></td>
+        <td th:text="${carType.aircon}"></td>
+        <td th:text="${carType.car_description}"></td>
+        <td class="delete-car-type-">
+            <form th:action="@{/deleteCarType}" method="post">
+                <input type="hidden" name="car_id" th:value="${carType.car_id}"></input>
+                <button type="submit" class="delete-car-type-button">Delete car type</button>
+            </form>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

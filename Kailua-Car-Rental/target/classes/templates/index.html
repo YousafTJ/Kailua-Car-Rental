@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:tr="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="MyCSS.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <title>Homepage</title>
+</head>
+<body class="start-page">
+
+<div class="start">
+<h1>Welcome to Kailua car rental</h1>
+    <a th:href="@{/logIn}" class="log-in">
+        Log in</a>
+</div>
+    <h2>We have every type of car that you need</h2>
+<div class="show-car">
+<p><strong>Luxury car </strong>Experience unmatched elegance and comfort with our luxury car rental. Perfect for business or pleasure, this car elevates every drive with refined style and advanced features. Treat yourself to a journey where every mile is pure luxury.</p>
+<img src="https://img.freepik.com/free-photo/luxury-car-speeds-by-modern-building-dusk-generative-ai_188544-8048.jpg?ga=GA1.1.519555005.1729767876&semt=ais_hybrid">
+</div>
+
+<div class="show-car">
+    <p><strong>Family car </strong>Make family trips a breeze with our spacious, safe, and fuel-efficient family car. With room for everyone and plenty of storage, it’s the ideal choice for comfortable, worry-free journeys. Focus on the fun—we’ll handle the road.</p>
+    <img src="https://img.freepik.com/free-photo/happy-family-resting-after-day-spending-outdoor-autumn-park-father-mother-two-children-sitting-inside-car-trunk-smiling-family-holiday-traveling-concept_1157-51161.jpg?ga=GA1.1.519555005.1729767876&semt=ais_hybrid">
+</div>
+
+
+<div class="show-car">
+    <p><strong>Sports car </strong>Craving excitement? Rent a sports car and feel the rush of power and style. Perfect for thrill-seekers, this car turns every drive into an adventure. Make every moment unforgettable behind the wheel.</p>
+    <img src="https://img.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_188544-8052.jpg?ga=GA1.1.519555005.1729767876&semt=ais_hybrid">
+</div>
+
+
+
+<div class="cartype">
+<table class="car-type">
+    <thead>
+    <tr>
+        <th>Car type</th>
+        <th>Gear</th>
+        <th>Cruise control</th>
+        <th>Seats</th>
+        <th>Air condition</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cartype: ${cartypes}">
+        <td th:text="${cartype.car_id}"></td>
+        <td th:text="${cartype.gear}"></td>
+        <td th:text="${cartype.cruise_control}"></td>
+        <td th:text="${cartype.seats}"></td>
+        <td th:text="${cartype.aircon}"></td>
+        <td th:text="${cartype.car_description}"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<div class="car-button">
+<a th:href="@{/seeCars}" class="seeCarsButton">
+    See all cars</a>
+</div>
+
+</body>
+</html>

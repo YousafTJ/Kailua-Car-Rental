@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="ManageCSS.css">
+    <title>Manage cars</title>
+</head>
+<body class="manage-car-page">
+<h1 class="manage-car-h1">All cars</h1>
+<a th:href="@{/addCar}" class="add-car">Create new car</a>
+<table class="cars-table">
+  <thead>
+  <tr>
+    <th>Car id</th>
+    <th>Brand</th>
+    <th>Model</th>
+    <th>Fuel type</th>
+    <th>Registration plate</th>
+    <th>First registration</th>
+    <th>Odometer</th>
+    <th>Link to picture</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="car: ${cars}">
+    <td th:text="${car.car_id}"></td>
+    <td th:text="${car.brand}"></td>
+    <td th:text="${car.model}"></td>
+    <td th:text="${car.fuel_type}"></td>
+    <td th:text="${car.registration_plate}"></td>
+    <td th:text="${car.first_registration}"></td>
+    <td th:text="${car.odometer}"></td>
+    <td><img th:src="${car.link}" alt="Car Image" style="max-width: 100px; height: auto;"></td>
+    <td class="delete-car">
+      <form th:action="@{/deleteCar}" method="post">
+        <input type="hidden" name="registration_plate" th:value="${car.registration_plate}">
+        <button type="submit" class="delete-car-button">Delete car</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="MyCSS.css">
+    <title>Cars</title>
+</head>
+<body class="cars-body">
+
+<div class="all-cars-container">
+<h1 class="cars-h1">All cars</h1>
+<div class="cars-here">
+<table class="cars-table">
+    <thead>
+    <tr>
+        <th>Car id</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Fuel type</th>
+        <th>Registration plate</th>
+        <th>First registration</th>
+        <th>Odometer</th>
+        <th>Picture</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.car_id}"></td>
+        <td th:text="${car.brand}"></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.fuel_type}"></td>
+        <td th:text="${car.registration_plate}"></td>
+        <td th:text="${car.first_registration}"></td>
+        <td th:text="${car.odometer}"></td>
+        <td><img th:src="${car.link}" alt="Car Image"></td>
+
+        <td class="rent">
+            <form th:action="@{/rent}" method="post">
+                <input type="hidden" name="car_id" th:value="${car.car_id}">
+                <input type="hidden" name="brand" th:value="${car.brand}">
+                <input type="hidden" name="model" th:value="${car.model}">
+                <input type="hidden" name="fuel_type" th:value="${car.fuel_type}">
+                <input type="hidden" name="registration_plate" th:value="${car.registration_plate}">
+                <input type="hidden" name="first_registration" th:value="${car.first_registration}"> <!-- Fix this -->
+                <input type="hidden" name="odometer" th:value="${car.odometer}">
+                <input type="hidden" name="link" th:value="${car.link}">
+                <button type="submit" class="rent-button">Rent</button>
+            </form>
+        </td>
+    </tr>
+
+    </tbody>
+</div>
+
+
+</table>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="ManageCSS.css">
+    <title>Customers</title>
+</head>
+<body class="customer-page">
+<h1 class="customer-h1">All customers</h1>
+
+<table class="customer-table">
+  <thead>
+  <tr>
+    <th>Customer id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Zip</th>
+    <th>City</th>
+    <th>Phone number</th>
+    <th>Email</th>
+    <th>Driver license number</th>
+    <th>Driver since date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="customer: ${customers}">
+    <td th:text="${customer.customer_id}"></td>
+    <td th:text="${customer.name}"></td>
+    <td th:text="${customer.address}"></td>
+    <td th:text="${customer.zip}"></td>
+    <td th:text="${customer.city}"></td>
+    <td th:text="${customer.phone}"></td>
+    <td th:text="${customer.email}"></td>
+    <td th:text="${customer.driver_licence_number}"></td>
+    <td th:text="${customer.driver_licence_number}"></td>
+    <td th:text="${customer.driver_since_date}"></td>
+    <td class="delete-customer">
+      <form th:action="@{/deleteCustomer}" method="post">
+        <input type="hidden" name="customer_id" th:value="${customer.customer_id}">
+        <button type="submit" class="delete-customer-button">Delete customer</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

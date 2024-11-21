@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="MyCSS.css">
+    <title>Rent page</title>
+</head>
+<body class="rent-page">
+<h1 class="rent-h1">Your car</h1>
+<table class="rent-car-table">
+    <tr>
+        <td>Car ID:</td>
+        <td th:text="${car_model.car_id}"></td>
+    </tr>
+    <tr>
+        <td>Brand:</td>
+        <td th:text="${car_model.brand}"></td>
+    </tr>
+    <tr>
+        <td>Model:</td>
+        <td th:text="${car_model.model}"></td>
+    </tr>
+    <tr>
+        <td>Fuel Type:</td>
+        <td th:text="${car_model.fuel_type}"></td>
+    </tr>
+    <tr>
+        <td>Registration Plate:</td>
+        <td th:text="${car_model.registration_plate}"></td>
+    </tr>
+    <tr>
+        <td>First Registration:</td>
+        <td th:text="${car_model.first_registration}"></td>
+    </tr>
+    <tr>
+        <td>Odometer:</td>
+        <td th:text="${car_model.odometer}"></td>
+    </tr>
+    <tr>
+        <td>Picture:</td>
+        <td><img th:src="${car_model.link}" alt="Car Image" style="max-width: 100px; height: auto;"></td>
+    </tr>
+</table>
+
+
+<form th:action="@{/rentAndCustomer}" method="post" class="rent-and-customer">
+    <div class="customer-info">
+        <h2>Customer info</h2>
+    <input type="text" name="name" placeholder="name" required>
+    <input type="text" name="address" placeholder="address" required>
+    <input type="text" name="zip" placeholder="zip" required>
+    <input type="text" name="city" placeholder="city" required>
+    <input type="text" name="phone" placeholder="phone" required>
+    <input type="text" name="email" placeholder="email" required>
+    <input type="text" name="driver_licence_number" placeholder="license number" required>
+        <label>Driver Since:</label>
+        <input type="date" name="driver_since_date" placeholder="driver since date in format 'xxxx-xx-xx'" required>
+    </div>
+    <div class="contract-info">
+        <h2>Rental contract info</h2>
+        <input type="text" name="customer_id" placeholder="customer id">
+        <input type="text" name="renters_name" placeholder="your name" required>
+        <input type="text" name="driver_licence_number" placeholder="your drivers license" required>
+        <label>From Date:</label>
+        <input type="date" name="from_date_time" placeholder="date of rent start in this format 'xxxx-xx-xx'" required>
+        <label>To Date:</label>
+        <input type="date" name="to_date_time" placeholder="date of rent end in this format 'xxxx-xx-xx'" required>
+        <input type="text" name="max_km" placeholder="maximum kilometer" required>
+        <input type="text" name="odometer_start" placeholder="odometer start" required>
+        <input type="text" name="registration_plate" th:value="${car_model.registration_plate}"  placeholder="registration number already registered" readonly>
+    </div>
+    <button type="submit" class="submit-rent">Rent</button>
+</form>
+</body>
+</html>

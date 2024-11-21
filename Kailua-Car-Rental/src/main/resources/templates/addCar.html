@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="ManageCSS.css">
+  <title>Add Car</title>
+</head>
+<body class="add-car-page">
+<h1 class="add-car-h1">Add a New Car</h1>
+<div class="add-car-box">
+  <form th:action="@{/createCar}" method="post">
+    <input type="text" name="car_id" placeholder="Car ID">
+    <input type="text" name="brand" placeholder="Brand">
+    <input type="text" name="model" placeholder="Model">
+    <input type="text" name="fuel_type" placeholder="Fuel Type">
+    <input type="text" name="registration_plate" placeholder="Registration Plate">
+    <input type="text" name="first_registration" placeholder="Registration Date (yyyy-mm-dd)">
+    <input type="text" name="odometer" placeholder="Odometer of Car">
+    <input type="text" name="link" placeholder="Link to Picture">
+    <button type="submit" class="submit-car-button">Create Car</button>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ManageCSS.css">
+    <title>Manage</title>
+</head>
+<body class="manage-page">
+
+
+
+<div class="manage-box">
+    <h1 class="manage-h1">Welcome</h1>
+
+    <a th:href="@{/manageCars}" class="manage-cars">See all cars</a>
+    <a th:href="@{/manageCarTypes}" class="manage-car-types">See car types</a>
+    <a th:href="@{/manageContracts}" class="manage-contracts">See all contracts</a>
+    <a th:href="@{/manageCustomers}" class="manage-customers">See all customers</a>
+
+</div>
+
+
+</body>
+</html>

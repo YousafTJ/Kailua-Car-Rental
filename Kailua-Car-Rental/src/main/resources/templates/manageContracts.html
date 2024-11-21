@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="ManageCSS.css">
+    <title>Contracts</title>
+</head>
+<body class="contracts-page">
+<h1 class="contract-h1">All rental contracts</h1>
+
+
+<table class="contract-table">
+  <thead>
+  <tr>
+    <th>Rental id</th>
+    <th>Customer id</th>
+    <th>Renters name</th>
+    <th>Driver license</th>
+    <th>From date</th>
+    <th>To Date</th>
+    <th>Max km</th>
+    <th>Odometer start</th>
+    <th>Registration plate</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="contract: ${contracts}">
+
+    <td th:text="${contract.rental_id}"></td>
+    <td th:text="${contract.customer_id}"></td>
+    <td th:text="${contract.renters_name}"></td>
+    <td th:text="${contract.driver_licence_number}"></td>
+    <td th:text="${contract.from_date_time}"></td>
+    <td th:text="${contract.to_date_time}"></td>
+    <td th:text="${contract.max_km}"></td>
+    <td th:text="${contract.odometer_start}"></td>
+    <td th:text="${contract.registration_plate}"></td>
+    <td class="delete-contract">
+      <form th:action="@{/deleteContract}" method="post">
+        <input type="hidden" name="rental_id" th:value="${contract.rental_id}">
+        <input type="hidden" name="registration_plate" th:value="${contract.registration_plate}">
+        <button type="submit" class="delete-contract-button">Delete contract</button>
+      </form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+</body>
+</html>
